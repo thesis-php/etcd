@@ -6,8 +6,24 @@ services:
     environment:
       IN_CONTAINER: true
       HISTFILE: /workspace/var/.docker_history
+      ETCD_HOST: ${ETCD_HOST:-etcd:2379}
     volumes:
       - .:/workspace
       - ~/.composer/cache:/composer/cache
     tty: true
     init: true
+    depends_on:
+      etcd:
+        condition: service_healthy
+
+  etcd:
+    image: gcr.io/etcd-development/etcd:v3.7.0
+    command:
+      - /usr/local/bin/etcd
+      - --advertise-client-urls=http://0.0.0.0:2379
+      - --listen-client-urls=http://0.0.0.0:2379
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 2s
+      timeout: 5s
+      retries: 15

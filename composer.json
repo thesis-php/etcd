@@ -1,6 +1,6 @@
 {
     "name": "thesis/etcd",
-    "description": "Thesis Etcd",
+    "description": "Non-blocking PHP client for etcd v3: KV, watch, leases and locks over gRPC.",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -18,10 +18,21 @@
         }
     ],
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "amphp/amp": "^3.1",
+        "thesis/etcd-api": "0.1.3",
+        "thesis/googleapis-rpc-types": "^0.2",
+        "thesis/grpc-client": "^0.2",
+        "thesis/grpc-protocol": "^0.2",
+        "thesis/time-span": "^0.2.3"
     },
     "require-dev": {
         "symfony/var-dumper": "^8.0",
+        "testo/assert": "^0.1.11",
+        "testo/codecov": "^0.1.11",
+        "testo/data": "^0.1.6",
+        "testo/lifecycle": "^0.1.5",
+        "testo/test": "^0.1.6",
         "testo/testo": "^0.10.29"
     },
     "autoload": {
