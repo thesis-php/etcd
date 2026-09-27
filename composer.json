@@ -20,10 +20,10 @@
     "require": {
         "php": "^8.4",
         "amphp/amp": "^3.1",
-        "thesis/etcd-api": "^0.1.4",
-        "thesis/googleapis-rpc-types": "^0.2",
-        "thesis/grpc-client": "^0.2",
-        "thesis/grpc-protocol": "^0.2",
+        "thesis/etcd-api": "^0.1.5",
+        "thesis/googleapis-rpc-types": "^0.3",
+        "thesis/grpc-client": "^0.3",
+        "thesis/grpc-protocol": "^0.3",
         "thesis/time-span": "^0.2.3"
     },
     "require-dev": {
